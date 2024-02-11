@@ -19,6 +19,7 @@ Jump right into data analysis with these simple steps:
 
 ```bash
 pip install -r requirements.txt
+```
 
 ## Contributing 👋
 
