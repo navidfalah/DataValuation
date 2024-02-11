@@ -2,6 +2,9 @@ import numpy as np
 from data_generation import generate_synthetic_data
 from covariance_analysis import calculate_eigenvalues, calculate_diversity, calculate_relevance
 from visualization import plot_data_distribution, plot_eigenvalues
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
 
 buyer_covariance_matrix = np.array([[1, 0.1], [0.1, 0.25]])
@@ -21,7 +24,8 @@ print(f"Seller Data Eigenvalues: {seller_eigvals}")
 print(f"Diversity: {diversity}")
 print(f"Relevance: {relevance}")
 
-plot_data_distribution(buyer_data, "Buyer Data Distribution")
-plot_data_distribution(seller_data, "Seller Data Distribution")
-plot_eigenvalues(buyer_eigvals, "Buyer Eigenvalues")
-plot_eigenvalues(seller_eigvals, "Seller Eigenvalues")
+plot_data_distribution(buyer_data, "Buyer Data Distribution", "buyer_data_distribution.png")
+plot_data_distribution(seller_data, "Seller Data Distribution", "seller_data_distribution.png")
+plot_eigenvalues(buyer_eigvals, "Buyer Eigenvalues", "buyer_eigenvalues.png")
+plot_eigenvalues(seller_eigvals, "Seller Eigenvalues", "seller_eigenvalues.png")
+
